@@ -1,4 +1,5 @@
-# 💤 LazyVim
+# README
 
-A starter template for [LazyVim](https://github.com/LazyVim/LazyVim).
-Refer to the [documentation](https://lazyvim.github.io/installation) to get started.
+LeeY2ng's personal Lazyvim configuration fork from [LazyVim](https://github.com/LazyVim/LazyVim).
+
+- add vim-jukit plugin and have keyboard mappings to avoid conflict with Lazyvim
