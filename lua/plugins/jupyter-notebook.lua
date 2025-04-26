@@ -1,51 +1,51 @@
 return {
   "luk400/vim-jukit",
-  event = "VeryLazy",
+  ft = { "ipynb", "python" },
   init = function()
     vim.g.jukit_mappings = 0
   end,
   keys = {
     {
-      "<leader>j",
-      desc = "jupyter notebook",
+      "<leader>cj",
+      desc = "Jupyter notebook",
     },
     {
-      "<leader>jc",
+      "<leader>cjc",
       '<cmd>call jukit#convert#notebook_convert("jupyter-notebook")<cr>',
       desc = "Convert between ipynb and py",
     },
     {
-      "<leader>jo",
+      "<leader>cjo",
       "<cmd>call jukit#cells#create_below(0)<cr>",
       desc = "Create code cell below",
     },
     {
-      "<leader>jO",
+      "<leader>cjO",
       "<cmd>call jukit#cells#create_above(0)<cr>",
       desc = "Create code cell above",
     },
     {
-      "<leader>jt",
+      "<leader>cjt",
       "<cmd>call jukit#cells#create_below(1)<cr>",
       desc = "Create text cell above",
     },
     {
-      "<leader>jT",
+      "<leader>cjT",
       "<cmd>call jukit#cells#create_above(1)<cr>",
       desc = "Create text cell above",
     },
     {
-      "<leader>jd",
+      "<leader>cjd",
       "<cmd>call jukit#cells#delete()<cr>",
       desc = "Delete current cell",
     },
     {
-      "<leader>jj",
+      "<leader>cjj",
       "<cmd>call call jukit#cells#move_down()<cr>",
       desc = "Move current cell down",
     },
     {
-      "<leader>jk",
+      "<leader>cjk",
       "<cmd>call call jukit#cells#move_up()<cr>",
       desc = "Move current cell up",
     },
@@ -60,22 +60,22 @@ return {
       desc = "Jump to previous cell",
     },
     {
-      "<leader>jr",
+      "<leader>cjr",
       "<cmd>call jukit#send#section(0)<cr>",
       desc = "Run current cell",
     },
     {
-      "<leader>ja",
+      "<leader>cja",
       "<cmd>call jukit#send#all()<cr>",
       desc = "Run all cell",
     },
     {
-      "<leader>jwv",
+      "<leader>cjwv",
       "<cmd>call jukit#splits#output()<cr>",
       desc = "Create output window",
     },
     {
-      "<leader>jwd",
+      "<leader>cjwd",
       "<cmd>call jukit#splits#close_output_split()<cr>",
       desc = "Close output window",
     },
