@@ -1,19 +1,26 @@
 return {
-  -- "neovim/nvim-lspconfig",
-  -- opts = {
-  --  setup = {
-  require("lspconfig").pylsp.setup({
-    settings = {
-      pylsp = {
-        plugins = {
-          pycodestyle = {
-            ignore = { "W391" },
-            maxLineLength = 100,
+  {
+    require("lspconfig").pylsp.setup({
+      settings = {
+        pylsp = {
+          plugins = {
+            pycodestyle = {
+              ignore = { "W391" },
+              maxLineLength = 100,
+            },
           },
         },
       },
+    }),
+  },
+  {
+    "neovim/nvim-lspconfig",
+    opts = {
+      servers = {
+        pyright = {
+          enabled = false,
+        },
+      },
     },
-  }),
-  --  },
-  -- },
+  },
 }
