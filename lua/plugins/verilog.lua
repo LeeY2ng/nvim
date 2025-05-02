@@ -1,11 +1,32 @@
 return {
   {
+    "mfussenegger/nvim-lint",
+    events = { "BufWritePost", "BufReadPost", "InsertLeave" },
+    opts = {
+      linters_by_ft = {
+        verilog = { "verilator" },
+        systemverilog = { "verilator" },
+      },
+      linters = {
+        verilator = {
+          args = {
+            "--lint-only",
+            "-Wall",
+            "-f",
+            vim.fs.find(".verilator.lint", { upward = true })[1],
+          },
+        },
+      },
+    },
+  },
+  {
     "neovim/nvim-lspconfig",
     opts = {
       servers = {
         verible = {
           enabled = true,
           cmd = { "verible-verilog-ls", "--rules_config_search" },
+          filetypes = { "verilog", "systemverilog" },
         },
         svls = {
           enabled = false,
