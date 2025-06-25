@@ -42,6 +42,16 @@ return {
     },
   },
   {
+    "neovim/nvim-lspconfig",
+    opts = {
+      servers = {
+        vls = {
+          enabled = false,
+        },
+      },
+    },
+  },
+  {
     "vhda/verilog_systemverilog.vim",
     enabled = false,
   },
