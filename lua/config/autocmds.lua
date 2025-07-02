@@ -19,3 +19,17 @@ vim.api.nvim_create_autocmd({ "BufRead", "BufNewFile" }, {
     vim.bo.filetype = "verilog"
   end,
 })
+
+-- Autoformat setting
+local set_autoformat = function(pattern, bool_val)
+  vim.api.nvim_create_autocmd({ "FileType" }, {
+    pattern = pattern,
+    callback = function()
+      vim.b.autoformat = bool_val
+    end,
+  })
+end
+
+set_autoformat({ "cpp" }, false)
+set_autoformat({ "python " }, true)
+set_autoformat({ "lua" }, true)
